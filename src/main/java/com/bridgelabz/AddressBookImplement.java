@@ -1,6 +1,8 @@
 package com.bridgelabz;
 
 import java.util.*;
+
+
 public class AddressBookImplement implements MultipleAddressBook {
     public Map<String, ArrayList<AddressBook>> book;
     public Map<String, ArrayList<AddressBook>> multibook;
@@ -222,5 +224,10 @@ public class AddressBookImplement implements MultipleAddressBook {
             }
         }
         if (flag == 1) System.out.println("no records found");
+    }
+    public void sortAlphabetically() {
+        book.entrySet().stream().
+                sorted(Map.Entry.comparingByKey())
+                .forEach(System.out::println);
     }
 }
