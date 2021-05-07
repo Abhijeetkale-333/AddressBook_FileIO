@@ -1,5 +1,7 @@
 package com.bridgelabz;
 
+import java.util.Scanner;
+
 public class AddressBook {
     private final String firstName;
     private final String lastName;
@@ -10,34 +12,47 @@ public class AddressBook {
     private final String phone;
     private final String email;
 
-
-    public AddressBook(String firstName, String lastName, String address, String city, String state, String zip, String phone, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.zip = zip;
-        this.phone = phone;
-        this.email = email;
+    public AddressBook() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter First Name");
+        this.firstName = sc.next();
+        System.out.println("Enter last Name");
+        this.lastName = sc.next();
+        System.out.println("Enter Address");
+        this.address = sc.next();
+        System.out.println("Enter Your City Name");
+        this.city = sc.next();
+        System.out.println("Enter Your State");
+        this.state = sc.next();
+        System.out.println("Enter Zip");
+        this.zip = sc.next();
+        System.out.println("Enter Phone Number");
+        this.phone = sc.next();
+        System.out.println("Enter Email");
+        this.email = sc.next();
     }
 
-    @Override
-    public String toString() {
-        return "AddressBook{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", zip='" + zip + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public String toString(){
+        return "First Name:"+firstName+", Last Name:"+lastName+", Address:"+address+
+                ", State:"+state+", City:"+city+", ZIP:"+zip+", Phone:"+phone+", Email:"+email;
     }
+
 
     public static void main(String[] args) {
-        AddressBook obj = new AddressBook("Abhijeet", "Kale", "W.Nagpur", "Nagpur","Maharashtra","440030","9423628324","abhijeetkale786@gmail.com");
-        System.out.println(obj.toString());
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number Of Entry U Want");
+        int noOfEntry = sc.nextInt();
+
+        String list[] = new String[noOfEntry];
+
+        for (int i=0; i<noOfEntry; i++) {
+            System.out.println("Enter Value For contact No."+(i+1));
+            AddressBook obj = new AddressBook();
+            String contactDetails = obj.toString();
+            list[i]=contactDetails;
+        }
+        for (int i=0; i<noOfEntry; i++){
+            System.out.println(list[i]);
+        }
     }
 }
