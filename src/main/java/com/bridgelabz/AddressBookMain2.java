@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class AddressBookMain2 {
+class AdressBookMain2 {
     static Scanner input = new Scanner(System.in);
     static String[] info;
     static String name, addressBookName, firstName;
