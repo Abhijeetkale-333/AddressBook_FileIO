@@ -3,10 +3,10 @@ package com.bridgelabz;
 public class AddressBookMain {
     public static void main(String[] args){
         AddressBookImplement bookBuilder=new AddressBookImplement();
-        bookBuilder.makeChoice();
+        bookBuilder.makechoice();
         boolean conditon=true;
         while (conditon) {
-            boolean condition = bookBuilder.makeChoice();
+            boolean condition = bookBuilder.makechoice();
             if (condition == false)
                 break;
         }
